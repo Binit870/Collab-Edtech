@@ -3,7 +3,7 @@ import Profile from "../assets/Profile.jpg";
 import Discover from "../assets/Discover.jpg";
 import Mentors from "../assets/Mentors.jpg";
 import Projects from "../assets/Projects.jpg";
-
+//arrays
 const slides = [
   {
     image: Profile,
