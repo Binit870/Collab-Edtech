@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Profile from "../assets/Profile.jpg";
-import Discover from "../assets/discover.jpg";
-import Mentors from "../assets/mentors.jpg";
-import Projects from "../assets/projects.jpg";
+import Discover from "../assets/Discover.jpg";
+import Mentors from "../assets/Mentors.jpg";
+import Projects from "../assets/Projects.jpg";
 
 const slides = [
   {
