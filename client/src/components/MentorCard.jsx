@@ -1,32 +1,37 @@
-import React from "react";
+// src/components/MentorCard.js
+
+import React from 'react';
+import { FaUserCircle } from 'react-icons/fa';
 
 const MentorCard = ({ mentor }) => {
   return (
-    <div className="bg-white shadow-md rounded-xl p-4 sm:p-6 hover:shadow-lg transition duration-200 w-full max-w-md mx-auto">
-      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
-        <img
-          src={mentor.avatar || "/default-avatar.png"}
-          alt="mentor-avatar"
-          className="w-20 h-20 rounded-full object-cover"
-        />
-        <div className="text-center sm:text-left">
-          <h3 className="text-lg font-semibold text-gray-800">{mentor.name}</h3>
-          <p className="text-sm text-gray-500 break-words">{mentor.expertise?.join(", ")}</p>
-          <p className="text-sm text-gray-400 mt-1">{mentor.bio}</p>
-        </div>
+    // Main card container
+    <div className="bg-cyan-800 shadow-md rounded-lg p-4 flex items-start space-x-4 transition duration-300 hover:scale-100 hover:shadow-xl hover:shadow-blue-500/20">
+      
+      {/* Icon Section */}
+      <div className="flex-shrink-0">
+        {/* Using a brighter gray for the icon */}
+        <FaUserCircle className="w-16 h-16 text-white" /> {/* CHANGED */}
       </div>
-      {mentor.linkedin && (
-        <div className="mt-4 flex justify-center sm:justify-start">
-          <a
-            href={mentor.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-blue-500 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-600 transition"
-          >
+
+      {/* Details Section */}
+      <div className="flex-1">
+        <h3 className="text-xl font-bold text-white">{mentor.name}</h3>
+        {/* Brighter text for expertise */}
+        <p className="text-sm text-white">{mentor.expertise.join(' • ')}</p> {/* CHANGED */}
+        {/* Brighter text for bio */}
+        <p className="mt-2 text-white">{mentor.bio}</p> {/* CHANGED */}
+        <a 
+          href={mentor.linkedin}
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition">
             Request Mentorship
-          </a>
-        </div>
-      )}
+          </button>
+        </a>
+      </div>
+
     </div>
   );
 };
